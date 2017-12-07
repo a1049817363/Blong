@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding:0;
+			}
+			#yanhua{
+				background: black;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.10.2.min (1).js"></script>
+		<script type="text/javascript">
+		</script>
+	</head>
+	<body>
+		<canvas id="yanhua" width="1920" height="1080"></canvas>
+		<script type="text/javascript">
+		function huayuan(){
+				var yanhua1=document.getElementById("yanhua").getContext("2d");
+				yanhua1.fillStyle="white";
+				yanhua1.beginPath();
+				yanhua1.moveTo(960,1080);
+				yanhua1.arc(960,1080,300,0,Math.PI*2);
+				yanhua1.closePath();
+				yanhua1.fill();
+			}
+		</script>
+	</body>
+</html>

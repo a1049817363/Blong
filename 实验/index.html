@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+<script type="text/javascript">
+var a=[1,5,2,3,7,9,6,4,8];
+var b=0;
+for(var i=0;i<a.length;i++){
+	for(var j=i;j<a.length;j++){
+		if(a[j+1]<a[j])
+		{
+			b=a[j+1];
+			a[j+1]=a[j];
+			a[j]=b;
+		}
+	}
+}
+for (var t=0;t<a.length;t++) {
+	document.write(a[t]+"&nbsp;&nbsp");
+	
+}
+</script>
+	</body>
+</html>

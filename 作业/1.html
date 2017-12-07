@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <script type="text/javascript" src="js/jquery-1.8.2.min.js" ></script>
+                <script type="text/javascript">
+                    function test(){
+						$("#two").css("color","red");
+			}
+                </script>
+        </head>
+        <body>
+                <input type="button" value="选择 id 为 one 的元素" id="btn1" onclick="testone()"/>
+                <input type="button" value="选择 class 为 mini 的所有元素" id="btn2" onclick="testmini()" />
+                <input type="button" value="选择 元素名是 div 的所有元素" id="btn3" onclick="testdiv()" />
+                <input type="button" value="选择 所有的元素" id="btn4" onclick="testsuoyou()"/>
+                <input type="button" value="选择 所有的 span 元素和id为two的元素" id="btn5" onclick="test()"/>
+
+                <br><br>
+                <div class="one" id="one">
+                        id 为 one,class 为 one 的div
+                        <div class="mini">class为mini</div>
+                </div>
+                <div class="one" id="two" title="test">
+                        id为two,class为one,title为test的div
+                        <div class="mini" title="other">class为mini,title为other</div>
+                        <div class="mini" title="test">class为mini,title为test</div>
+                </div>
+                <div class="one">
+                        <div class="mini">class为mini</div>
+                        <div class="mini">class为mini</div>
+                        <div class="mini">class为mini</div>
+                        <div class="mini"></div>
+                </div>
+                <div class="one">
+                        <div class="mini">class为mini</div>
+                        <div class="mini">class为mini</div>
+                        <div class="mini">class为mini</div>
+                        <div class="mini" title="tesst">class为mini,title为tesst</div>
+                </div>
+                <div style="display:none;" class="none">style的display为"none"的div</div>
+                <div class="hide">class为"hide"的div</div>
+                <div>
+                        包含input的type为"hidden"的div<input type="hidden" size="8">
+                </div>
+                <span id="span">^^span元素^^</span>
+        </body>
+</html>

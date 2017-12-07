@@ -1,0 +1,40 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#box1{
+	width: 1100px;
+	height: 429px;
+}
+.div1{
+	background: url(../img/11.jpg);
+}
+.div2{
+	background: url(../img/22.jpg);
+}
+.div3{
+	background: url(../img/33.jpg);
+}
+.div4{
+	background: url(../img/44.jpg);
+}
+.div{
+	float: left;
+}
+.div4{
+	width: 789px;
+}
+.div11{
+	width: 100px;
+	height: 429px;
+	color: white;
+	background: rgba(0,0,0,0.5);
+	cursor: pointer;
+}
+.div11 p{
+	font-size: 12px;
+	width:12px;
+	float: left;
+	margin-left: 25px;
+	margin-top: 20px;
+}

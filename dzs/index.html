@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			var pages= [ ];
+			//初始化方法
+			window.onload= function initPages(){
+				//获取页面所有的DIV
+				pages=document.getElementsByTagName("div");
+				
+				for(var i=0;i<pages.length;i++){
+				//pages[i].style.top:100px;
+			    pages[i].style.top="100px";
+				pages[i].style.left="600px";
+				pages[i].style.zIndex=0-i;
+			
+				pages[i].style.background = "url(img/"+ i +".jpg) no-repeat";
+				}
+			}
+			$(function(){
+				 $(".book").click(function(){
+				var classes=event.target.className.split(" ");
+
+				if(classes[classes.length-1]=="flipNext"){
+					classes[classes.length-1] = "flipBack";
+				}else if(classes[classes.length-1]=="flipBack"){
+					classes[classes.length-1 ] = "flipNext";
+				}else{
+					classes.push("flipNext");
+				}
+				event.target.style.zIndex *= -1;
+				event.target.className=classes.join(" ");
+			})
+			}) 
+		</script>
+		<style type="text/css">
+			.book{
+				width: 500px;
+				height: 650px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				box-shadow: 2px 2px 10px #111;
+				transform-origin:left ;
+			}
+			.flipNext{
+				/*将页面沿着Y轴进行过度.转180度*/
+				transform: rotateY(180deg);
+				transition:all 0.8s;
+				
+			}
+			.flipBack{
+			 	transform: rotateY(0deg);
+				transition:all 0.8s;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page1 book" ></div>
+		<div class="page2 book" ></div>
+		<div class="page3 book" ></div>
+		<div class="page4 book" ></div>
+		<div class="page5 book" ></div>
+		<div class="page6 book" ></div>
+
+	</body>
+	
+</html>

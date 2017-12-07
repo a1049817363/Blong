@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>淘宝商品轮播</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#gallery{
+				width: 750px;
+				height:500px;
+			}
+			#output{
+				width: 430px;
+				height: 430px;
+				overflow: hidden;
+			}
+			#output img{
+				display: block;
+				width: 100%;
+			}
+			#nav a{
+				display: inline-block;
+			}
+			.on{
+				box-shadow: 0 0 0 2px #000000;
+			}
+			#nav img{
+				cursor:pointer ;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.10.2.min (1).js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#output img").not(":first").hide();
+				$("#nav a").hover(function(){
+					$("#nav a").removeClass("on");
+					$(this).addClass("on");
+					if($("#" + this.rel).is(":hidden")){
+						$("#output img").hide();
+						$("#"+this.rel).show();
+						
+					}
+					
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="gallery">
+			<div id="output">
+				<img id="img1" src="img/1b.jpg"/>
+				<img id="img2" src="img/2b.jpg"/>
+				<img id="img3" src="img/3b.jpg"/>
+				<img id="img4" src="img/4b.jpg"/>
+				<img id="img5" src="img/5b.jpg"/>
+			</div>
+			<div id="nav">
+				<a rel="img1" href="#"><img src="img/1.jpg"/></a>
+				<a rel="img2" href="#"><img src="img/2.jpg"/></a>
+				<a rel="img3" href="#"><img src="img/3.jpg"/></a>
+				<a rel="img4" href="#"><img src="img/4.jpg"/></a>
+				<a rel="img5" href="#"><img src="img/5.jpg"/></a>
+			</div>
+		</div>
+	</body>
+</html>

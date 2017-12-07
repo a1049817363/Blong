@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#container{
+				width: 1226px;
+				height: 460px;
+				margin: 50px auto;
+				position: relative;
+			}
+			.nav{
+				width: 234px;
+				height: 430px;
+				background-color:rgba(0,0,0,0.6) ;
+				list-style: none;
+				padding-top:30px ;
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+			}
+			.nav li{
+				width: 194px;
+				height: 42px;
+				color: #ffffff;
+				line-height: 42px;
+				display: block;
+				padding-left:40px ;
+			}
+			.nav li:hover{
+				background-color:#ff6700 ;
+				
+			}
+			.more{
+				width: 265px;
+				height: 458px;
+				box-shadow:0 0 10px 0 #000000;
+				position: absolute;
+				left: 234px;
+				top:0;
+			}
+			.more>ul{
+				width: 265px;
+				height: 458px;
+				list-style: none;
+				position: relative;
+				background-color: white;
+			}
+			.more>ul>li{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.more>ul>li>ul{
+				list-style: none;
+				padding-top:20px ;
+				padding-left:20px ;
+			}
+			.more>ul>li>ul>li{
+				width: 265px;
+				height: 76px;
+				line-height: 76px;
+			}
+			.more>ul>li>ul>li>img{
+				width: 40px;
+				height: 40px;
+				vertical-align: middle;
+			}
+			.more>ul>li>ul>li>span{
+				padding-left: 20px;
+			}
+			.more>ul>li>ul>li>span:hover{
+				cursor: pointer;
+				color: #FF6700;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".more").hide();
+				$(".more>ul>li").hide();
+				$(".nav li").mouseover(function(){
+					var index=$(this).index();//获取索引
+					$(".more").show();
+					$(".more>ul>li").hide();
+					$(".more>ul>li").eq(index).show();
+				})
+				$(".nav li").mouseout(function(){
+    					$(".more").mouseover(function(){
+    						$(".more").show();
+    					}).mouseout(function(){
+    						$(".more").hide();
+    					})
+
+    					$(".more").hide();
+				})
+			})
+		</script>
+		
+	</head>
+	<body>
+		<div id="container">
+			<ul class="nav">
+				<li>手机   电话卡</li>
+				<li>笔记本</li>
+				<li>电视盒子</li>
+				<li>路由器 智能硬件</li>
+				<li>移动电源 电池 插线板</li>
+				<li>耳机 音箱</li>
+				<li>保护套 贴膜</li>
+				<li>线材 支架 存储卡</li>
+				<li>箱包 服饰 鞋 眼镜</li>
+				<li>米兔 生活周边</li>
+			</ul>
+			<div class="more">
+				<ul >
+					<li>
+						<ul>
+							<li><img src="img/1a.png"/><span>小米note3</span></li>
+							<li><img src="img/1a.png"/><span>小米note3</span></li>
+							<li><img src="img/1a.png"/><span>小米note3</span></li>
+							<li><img src="img/1a.png"/><span>小米note3</span></li>
+							<li><img src="img/1a.png"/><span>小米note3</span></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><img src="img/1b.png"/><span>小米note3</span></li>
+							<li><img src="img/1b.png"/><span>小米note3</span></li>
+							<li><img src="img/1b.png"/><span>小米note3</span></li>
+							<li><img src="img/1b.png"/><span>小米note3</span></li>
+							<li><img src="img/1b.png"/><span>小米note3</span></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><img src="img/1c.png"/><span>小米note3</span></li>
+							<li><img src="img/1c.png"/><span>小米note3</span></li>
+							<li><img src="img/1c.png"/><span>小米note3</span></li>
+							<li><img src="img/1c.png"/><span>小米note3</span></li>
+							<li><img src="img/1c.png"/><span>小米note3</span></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><img src="img/1d.png"/><span>小米note3</span></li>
+							<li><img src="img/1d.png"/><span>小米note3</span></li>
+							<li><img src="img/1d.png"/><span>小米note3</span></li>
+							<li><img src="img/1d.png"/><span>小米note3</span></li>
+							<li><img src="img/1d.png"/><span>小米note3</span></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><img src="img/1e.jpg"/><span>小米note3</span></li>
+							<li><img src="img/1e.jpg"/><span>小米note3</span></li>
+							<li><img src="img/1e.jpg"/><span>小米note3</span></li>
+							<li><img src="img/1e.jpg"/><span>小米note3</span></li>
+							<li><img src="img/1e.jpg"/><span>小米note3</span></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><img src="img/10a.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10a.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10a.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10a.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10a.jpg"/><span>小米note3</span></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><img src="img/10b.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10b.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10b.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10b.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10b.jpg"/><span>小米note3</span></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><img src="img/10c.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10c.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10c.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10c.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10c.jpg"/><span>小米note3</span></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><img src="img/10d.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10d.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10d.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10d.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10d.jpg"/><span>小米note3</span></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><img src="img/10e.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10e.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10e.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10e.jpg"/><span>小米note3</span></li>
+							<li><img src="img/10e.jpg"/><span>小米note3</span></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="">
+				<img src="img/slidebox.jpg"/>
+			</div>
+		</div>
+</html>

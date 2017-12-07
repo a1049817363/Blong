@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.cube-container{
+				width:200px;
+				height:200px;
+				background-color: #222;
+				position: relative;
+			}
+			.cube{
+				width: 200px;
+				height:200px;
+				position: absolute;
+				left: 300px;
+				top: 300px;
+				transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+				perspective: 800px;
+				transform-style:preserve-3d ;
+				transition: all 1.5s;				
+			}
+			.front{
+				
+				background-color: #ff3300;
+				transform: rotateY(0deg) translateZ(170px);
+			}
+			.left{
+				transform-origin: right;
+				background-color: #00ff00;
+				transform: rotateY(-90deg) translateZ(170px) ;
+			}
+			.right{
+				transform-origin: left;
+				background-color:green;
+				transform: rotateY(90deg) translateZ(170px) ;
+			}
+			.back{
+				background-color:blue;
+				transform: rotateY(180deg) translateZ(-170px);
+			}
+			.cube>div{
+				width:200px;
+				height:200px;
+				font-size: 30px;
+				position: absolute;
+			}
+			.an{
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+			}
+			.img1,.img2{
+				border:10px solid green;
+				width: 50px;
+				height: 50px;
+				transform: rotateY(0deg) translateZ(170px);
+			}
+		
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var conter=0;
+				$(".img1").click(function(){
+					alert("dsa");
+					conter+=90;
+					$(".cube").css("transform",'rotateY('+conter+'deg)' );
+					
+					
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="cube-container">
+			<div class="cube">
+				<div class="front">
+					前
+				</div>
+				<div class="back">
+					后
+				</div>
+				<div class="left">
+					左
+				</div>
+				<div class="right">
+					右
+				</div>
+			</div>
+			<div class="an">
+				<img class="img1" src="img/left.png"/>
+				<img class="img2" src="img/right.png" />
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;/*去除自带内外边距*/
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="cvs"></canvas>
+		<script type="text/javascript">
+			var img=new Image();
+			img.src="img/111.jpg";
+			var w=window.innerWidth;
+			var h=window.innerHeight;
+			var cs=document.getElementById("cvs").getContext("2d");
+			document.getElementById("cvs").height=h;
+			document.getElementById("cvs").width=w;
+			var snow=200;//雪花的数量
+			var x,y,r;
+			var arr=[]//存放雪花的数组
+			for(var i=0;i<snow;i++){
+				arr.push({
+					x:Math.random()*w,
+					y:Math.random()*h,
+					r:Math.random()+1
+				})
+			}
+			function drawSnow(){
+				
+				cs.drawImage(img,0,0);
+				cs.fillStyle="white";
+				cs.beginPath();
+				for(var i=1;i<snow;i++){
+					var p=arr[i];
+					cs.moveTo(p.x,p.y);
+					/*（透明度0-1），0完全不透明，1完全透明*/
+					cs.arc(p.x,p.y,p.r,0,Math.PI*2);
+				}
+				cs.closePath();
+				cs.fill();
+				piao();
+			}
+			function piao(){
+				for(var i=0;i<snow;i++){
+			var p=arr[i];
+				p.x+=Math.random()+1;
+				p.y+=Math.random()+3;
+				if(p.x>=w)
+				p.x=0;
+				if(p.y>h)
+				p.y=0;
+			}
+			}
+			drawSnow();
+			setInterval(drawSnow,20);
+		</script>
+	</body>
+</html>
