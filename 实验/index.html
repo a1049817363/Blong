@@ -3,25 +3,33 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<style type="text/css">
+      		 body{ margin:0;padding:40px;background-color:#FFF;font:80% Arial;color:#555;line-height:180%;}
+       		 img{ border:0;}
+       		 ul,li{margin:0;padding:0;}
+       		 li{ float:left;display:inline;margin-right:10px;border:1px solid #AAA;}
+        	#tooltip{position:absolute;border:1px solid #333;background-color:#F7F5D1;padding:1px;color:#F00;display:none;}
+  		</style>
+		<script type="text/javascript" src="js/jquery-1.10.2.min (1).js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("ul li a").mouseover(function(){
+					var cx=$(this).parent().index()+1;
+					var $c='<div id=""><img src="img/'+cx+'.jpg/"></div>';
+					$("ul").append($c);
+				}).mouseout(function(){
+					$("ul div").remove();
+				})
+			})
+		</script>
 	</head>
 	<body>
-<script type="text/javascript">
-var a=[1,5,2,3,7,9,6,4,8];
-var b=0;
-for(var i=0;i<a.length;i++){
-	for(var j=i;j<a.length;j++){
-		if(a[j+1]<a[j])
-		{
-			b=a[j+1];
-			a[j+1]=a[j];
-			a[j]=b;
-		}
-	}
-}
-for (var t=0;t<a.length;t++) {
-	document.write(a[t]+"&nbsp;&nbsp");
+	<ul>
+ 	 	<li><a href="img/1.jpg"  title="奶瓶"><img src="img/s1.jpg" alt="奶瓶" /></a></li>
+  		<li><a href="img/2.jpg"  title="美女"><img src="img/s2.jpg" alt="美女"/></a></li>
+ 	 	<li><a href="img/3.jpg"  title="果脯"><img src="img/s3.jpg" alt="果脯"/></a></li>
+  		<li><a href="img/4.jpg"  title="山楂条"><img src="img/s4.jpg" alt="山楂条"/></a></li>
+	</ul>
 	
-}
-</script>
 	</body>
 </html>
